@@ -1,0 +1,59 @@
+
+View = 模式 + 尺寸->MeasureSpec  32位int值
+
+00000000000000000000000000000000
+
+MODE_MASK : 11000000000000000000000000000000
+
+~MODE_MASK: 00111111111111111111111111111111
+
+SpecMode（前2位）   +  SpecSize（后30）
+
+
+    public static final int UNSPECIFIED = 0 << MODE_SHIFT; 00000000000000000000000000000000
+
+父容器不对View做任何限制，系统内部使用
+
+       
+    public static final int EXACTLY     = 1 << MODE_SHIFT; 01000000000000000000000000000000
+父容器检测出View的大小，Vew的大小就是SpecSize LayoutPamras match_parent 固定大小
+
+    
+    public static final int AT_MOST     = 2 << MODE_SHIFT; 10000000000000000000000000000000
+父容器指定一个可用大小，View的大小不能超过这个值，LayoutPamras wrap_content
+
+
+mode + size --> MeasureSpec
+
+
+MeasureSpec = mode + size
+
+ViewGroup  measure --> onMeasure(测量子控件的宽高)--> setMeasuredDimension -->setMeasuredDimensionRaw(保存自己的宽高)
+View measure --> onMeasure --> setMeasuredDimension -->setMeasuredDimensionRaw(保存自己的宽高)
+
+match_parent  wrap_content 
+
+
+ViewGroup layout(来确定自己的位置，4个点的位置) -->onLayout（进行子View的布局）
+View layout(来确定自己的位置，4个点的位置)
+
+ViewGroup 
+绘制背景 drawBackground(canvas)
+
+绘制自己onDraw(canvas)
+
+绘制子View dispatchDraw(canvas)
+
+绘制前景，滚动条等装饰onDrawForeground(canvas)
+
+View 
+
+绘制背景 drawBackground(canvas)
+
+绘制自己onDraw(canvas)
+
+绘制前景，滚动条等装饰onDrawForeground(canvas) 
+
+onMeasure  --> onLayout(容器) --> onDraw（可选）
+
+

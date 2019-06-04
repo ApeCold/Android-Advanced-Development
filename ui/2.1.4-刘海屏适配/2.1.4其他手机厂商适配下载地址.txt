@@ -1,0 +1,5 @@
+其他手机厂商（华为，小米，oppo，vivo）适配
+华为:https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114 
+小米:https://dev.mi.com/console/doc/detail?pId=1293
+Oppo:https://open.oppomobile.com/service/message/detail?id=61876
+Vivo:https://dev.vivo.com.cn/documentCenter/doc/103

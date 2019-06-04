@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!-- 标题栏颜色 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- 强调颜色 -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 窗口颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- 虚拟导航栏颜色 -->
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <!--&lt;!&ndash;设置menu菜单的背景色&ndash;&gt;-->
+        <!--<item name="android:itemBackground">@color/black</item>-->
+        <!--&lt;!&ndash;设置Menu菜单的字体颜色&ndash;&gt;-->
+        <!--<item name="android:textColorPrimary">@android:color/darker_gray</item>-->
+        <!--&lt;!&ndash;设置Menu窗口不覆盖ToolBar视图&ndash;&gt;-->
+        <!--<item name="overlapAnchor">false</item>-->
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- 更改标题栏的字体，图标颜色 -->
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="transparentText">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ToolBarTitleText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CollapsingToolbarTitleStyle.About" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <!--Theme Dialog style-->
+    <style name="AppTheme.AppCompat.Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:maxWidth">1080dp</item>
+    </style>
+
+    <!--ToolBar TextSize style-->
+    <style name="ToolBar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="toolbar" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="330dp"-->
+        <!--android:background="@mipmap/ic_vip_header_bg"-->
+        <!--android:contentDescription="@null" />-->
+
+    <!--app:cardBackgroundColor="@color/colorPrimary"  设置cardView背景色 -->
+    <!--app:cardPreventCornerOverlap="false" 取消Lollipop以下版本的padding -->
+    <!--app:cardUseCompatPadding="true" 为 Lollipop 及其以上版本增加一个阴影padding内边距-->
+    <!--app:cardCornerRadius="8dp" 设置cardView圆角效果-->
+    <!--app:cardElevation="10dp" 设置cardView Z轴阴影大小-->
+    <!--app:cardMaxElevation="6dp" 设置cardView Z轴最大阴影-->
+    <!--app:contentPadding="10dp" 设置内容的内边距-->
+    <!--app:contentPaddingBottom="12dp" 设置内容的底部内边距-->
+    <!--app:contentPaddingLeft="12dp" 设置内容的左边内边距-->
+    <!--app:contentPaddingRight="12dp" 设置内容的右边内边距-->
+    <!--app:contentPaddingTop="12dp" 设置内容的顶部内边距-->
+    <android.support.v7.widget.CardView android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="10dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardElevation="10dp">
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="cardView"
+            android:background="#ffff00"
+            android:gravity="center"/>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

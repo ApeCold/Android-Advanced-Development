@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <com.wangyi.yunmusic.ui.UIRelativeLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        >
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="1080px"
+        android:layout_height="50px"
+        android:background="@color/colorPrimaryDark"
+   />
+    <TextView
+        android:layout_below="@+id/text1"
+        android:layout_width="540px"
+        android:layout_height="50px"
+        android:background="@color/colorPrimaryDark"
+        />
+    </com.wangyi.yunmusic.ui.UIRelativeLayout>
+    <TextView
+        android:layout_below="@+id/line1"
+        android:id="@+id/tvText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="工具类适配1"
+        android:background="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/tvText4"
+        android:layout_below="@+id/tvText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="工具类适配2"
+        android:background="@color/colorPrimary" />
+</LinearLayout>
