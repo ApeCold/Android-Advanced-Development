@@ -1,0 +1,1 @@
+http://www.shaderific.com/glsl-functions
