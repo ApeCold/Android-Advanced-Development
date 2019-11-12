@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--定义自定义属性-->
+    <attr name="custom_typeface" format="string" />
+    <attr name="mySrc" format="reference" />
+
+</resources>

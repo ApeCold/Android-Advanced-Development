@@ -1,0 +1,29 @@
+﻿<!-- 请保证该文档一定是 UTF-8编码 -->
+<updateXml>
+    <updateStep
+        versionFrom="v002"
+        versionTo="V003">
+        <updateDb>
+            <!--对备份的表重新命名-->
+            <sql_rename>alter table tb_photo rename to bak_tb_photo;</sql_rename>
+            <!-- 创建一个新表 -->
+            <sql_create>
+                create table if not exists tb_photo(
+                time TEXT,
+                path TEXT,
+                name TEXT,
+                lastupdateTime TEXT,
+                user_id Integer primary key
+                );
+            </sql_create>
+            <!-- 将备份表中的数据 插入到新表中 -->
+            <sql_insert>
+                insert into tb_photo(time,path)select time,path from bak_tb_photo;
+            </sql_insert>
+            <!-- 删除之前的备份表 -->
+            <sql_delete>
+                drop table if exists bak_tb_photo;
+            </sql_delete>
+        </updateDb>
+    </updateStep>
+</updateXml>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TextView控件属性 -->
+    <declare-styleable name="SkinnableTextView">
+        <attr name="android:background" />
+        <attr name="android:textColor" />
+        <!-- 字体属性 -->
+        <attr name="custom_typeface" />
+    </declare-styleable>
+
+    <!-- Button控件继承TextView，此处parent语法通过，但无效果，不像style.xml -->
+    <declare-styleable name="SkinnableButton">
+        <attr name="android:background" />
+        <attr name="android:textColor" />
+        <!-- 字体属性 -->
+        <attr name="custom_typeface" />
+    </declare-styleable>
+
+    <!-- ImageView控件特有属性 -->
+    <declare-styleable name="SkinnableImageView">
+        <attr name="android:src" />
+    </declare-styleable>
+
+    <!-- SkinnableLinearLayout控件 -->
+    <declare-styleable name="SkinnableLinearLayout">
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <!-- SkinnableRelativeLayout控件 -->
+    <declare-styleable name="SkinnableRelativeLayout">
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <!-- 后续架构师拓展………………………………………………………………………… -->
+
+</resources>

@@ -1,0 +1,66 @@
+学习类加载之前，我们去startActivity跳转 到 插件中的Activity看会发生什么错误（分析错误的过程中学习类加载）
+
+宿主 跳转 宿主的Actvity       ok
+
+宿主 跳转 插件里面的Activity  报错
+分析错误原因，来学习Android类加载：
+Caused by: java.lang.ClassNotFoundException: Didn't find class "com.netease.plugin_package.PluginActivity" on path:
+ DexPathList[[zip file "/data/app/com.netease.hookproject-1/base.apk", zip file "/data/app/com.netease.hookproject-1/split_lib_
+ dependencies_apk.apk", zip file "/data/app/com.netease.hookproject-1/split_lib_slice_0_apk.apk", zip file "/data/app/com
+ .netease.hookproject-1/split_lib_slice_1_apk.apk", zip file "/data/app/com.netease.hookproject-1/split_lib_slice_2_apk.apk"
+ , zip file "/data/app/com.netease.hookproject-1/split_lib_slice_3_apk.apk", zip file "/data/app/com.netease.hookproject-1/s
+ plit_lib_slice_4_apk.apk", zip file "/data/app/com.netease.hookproject-1/split_lib_slice_5_apk.apk", zip file "/data/app/com
+ .netease.hookproject-1/split_lib_slice_6_apk.apk", zip file "/data/app/com.netease.hookproject-1/split_lib_slice_7_apk.apk",
+ zip file "/data/app/com.netease.hookproject-1/split_lib_slice_8_apk.apk", zip file "/data/app/com.netease.hookproject-1/spli
+ t_lib_slice_9_apk.apk"],nativeLibraryDirectories=[/vendor/lib, /system/lib]]
+
+ startActivity --> AMS ---> ActivityThread(把代理的Activity给换回来了) ---> 要去实例化Activity （报错）
+
+ Activity --> Instrumentation ---> AMS检查 --->
+    ActivityThread (即将加载)-（handleLaunchActivity 类加载Activity performLaunchActivity ---> newActivity(cl == PathClassLoader)）
+
+
+分析Android中的ClassLoader：
+    1.java中的ClassLoader 和 Android的ClassLoader 是不一样
+    2.ClassLoader == PathClassLoader
+    3.PathClassLoader == cl.loadClass(className).newInstance();
+
+PathClassLoader.loadClass  ---》 BaseDexClassLoader --》ClassLoader.loadClass--findClass(空方法) 让覆盖的子类方法去完成 --》
+BaseDexClassLoader.findClass() ---》pathList.findClass
+
+BaseDexClassLoader.findClass() -- c 为什么为null，--》 DexPathList.findClass(className) ---》DexFile.loadClassBinaryName（系列步骤后 NDK）
+
+for遍历 dexElements == Element[] ，分析 Element 是什么 ，为什么Element.dexFile==null?
+
+Android虚拟机 dex文件的  dex == 对Dex表现形式的描述  Element  ---  dexFile拥有可执行
+
+为什么 Element ==null?
+答：就是因为类加载机制加载的是  ---》 宿主的 classes.dex--Elements，   【没有插件的Element】
+
+解决方案：把插件的dexElements 和 宿主中的 dexElements 融为一体  PathClassLoader 就能加载到 插件/宿主  都可以加载到了
+Hook式 插件化
+
+占位 插桩 ---》插件开发 宿主中的组件环境
+
+
+
+
+
+
+------ Android ClassLoader介绍
+1.java中的ClassLoader 和 Android的ClassLoader 是不一样
+2.Android中的ClassLoader 分为两类：系统提供的ClassLoader ---》BootClassLoader，PathClassLoader，DexClassLoader
+                                  自定义ClassLoader
+
+给系统预加载使用的 ：BootClassLoader
+给程序/系统程序/应用程序 加载class的 PathClassLoader
+加载 apk zip apk文件 DexClassLoader
+
+1.内核启动 ...
+2.init第一个进程
+3.zygote进程
+  // 启动是很早就要启动
+  ---> zygoteInit --> BootClassLoader.getInstance();     handleSystemServerProcess PathClassLoaderFactory --》PathClassLoader
+4.zygote进程孵化 SystemServer
+5.SystemServer启动很多的服务 ---（AMS，PSM，...）
+// 不能在这里启动

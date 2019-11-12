@@ -1,0 +1,1 @@
+include ':app', ':stander', ':plugin_package'

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 自定义控件属性 -->
+    <declare-styleable name="CustomCircleView">
+        <attr name="circleColor" format="color" />
+    </declare-styleable>
+
+</resources>

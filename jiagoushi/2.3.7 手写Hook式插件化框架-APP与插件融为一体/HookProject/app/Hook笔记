@@ -1,0 +1,35 @@
+Hook 基础 -- 从入门到熟练
+1.替换（把系统里面的 替换成 动态代理）
+2.添加动态代理（做我们自己的业务逻辑）
+
+
+---- Hook 系统源码 ----> TestActivity 不再AndroidManifest里面注册，也能启动
+会报错：TestActivity}; have you declared this activity in your AndroidManifest.xml?  没有在AndroidManifest里面注册
+
+原因：
+
+startActivity --->  TestActivity ----》 （Hook） （AMS）ActivityManagerService（检测，当前要启动的Activity是否注册了）
+
+Hook  （Hook）：
+1.把TestActivity 替换我们真实有效的Activity
+
+startActivity(TestActivity) ---> Activity --> Instrumentation.execStartActivity ---> ActivityManagerNative.getDefault()
+ IActivityManager.startActivity --->  (Hook)   AMS.startActivity（检测，当前要启动的Activity是否注册了）
+
+ 思想切入点：既然会得到IActivityManager，会设置IActivityManager，（寻找替换点(动态代理)）
+
+ 动态代理：由于执行startActivity之前，我们需要先执行我们的代码(把TestActivity 替换成 已经注册的 Activity)
+
+
+2.ASM检查过后，要把这个ProxyActivity 换回来 --> TestActivity
+
+startActivity --->  TestActivity -- （Hook ProxyActivity）（AMS）检测，当前要启动的Activity是否注册了）ok ---》
+  ActivityThread（即将加载启动Activity）----(要把这个ProxyActivity 换回来 --> TestActivity)
+
+Hook LAUNCH_ACTIVITY
+
+我们要在Handler。handleMessage 之前执行，就是为了(要把这个ProxyActivity 换回来 --> TestActivity)，所有需要Hook
+
+
+1.hook ams检查  把TestActivity 换成 ProxyActivity
+2.hook 即将要加载Activity又把ProxyActivity 换回来了 TestActivity

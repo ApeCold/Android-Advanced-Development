@@ -1,0 +1,5 @@
+// 为了获取 IActivityManager
+ActivityManager.getService()
+
+// .startActivity
+IActivityManager.startActivity();(应用所在进程)      ----》       Binder ----AMS (系统进程)

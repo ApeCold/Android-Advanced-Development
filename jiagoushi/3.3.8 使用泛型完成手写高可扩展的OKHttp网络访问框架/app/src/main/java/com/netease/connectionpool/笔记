@@ -1,0 +1,19 @@
+责任链模式去管理的
+1，重试拦截器
+2，请求头处理的拦截器
+3，连接服务器的拦截器 ---> Socket请求
+
+连接池的出现
+
+为什么说OKHttp是高效的网络请求框架？
+答：自己去封装了Socket，原始化，复用Socket。
+
+www.baidu.com   20
+
+www.163.com  30
+
+www.hao123.com  32
+www.hao123.com  32
+www.hao123.com  32
+
+

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/neatest_bg">
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/toolbar"
+        android:scaleType="fitXY"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/skin_item_color"
+        android:layout_below="@id/title">
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/music_icn_local"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本地音乐(32)"
+            android:layout_toRightOf="@id/iv_1"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="@color/skin_my_textColor"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@color/skin_item_color"
+        android:layout_below="@id/rl1">
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/music_icn_recent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最近播放(12)"
+            android:layout_toRightOf="@id/iv_2"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="@color/skin_my_textColor"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@color/skin_item_color"
+        android:layout_below="@id/rl2">
+
+        <ImageView
+            android:id="@+id/iv_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/music_icn_dld"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载管理(10)"
+            android:layout_toRightOf="@id/iv_3"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="@color/skin_my_textColor"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@color/skin_item_color"
+        android:layout_below="@id/rl3">
+
+        <ImageView
+            android:id="@+id/iv_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/music_icn_artist"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我是歌手(6)"
+            android:layout_toRightOf="@id/iv_4"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="@color/skin_my_textColor"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl4"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/text_drawable_left"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="换肤"
+            android:onClick="skinAction"
+            android:background="@color/skin_item_color"
+            android:textColor="@color/skin_my_textColor"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="默认"
+            android:onClick="revertDefault"
+            android:background="@color/skin_item_color"
+            android:textColor="@color/skin_my_textColor"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="跳转"
+            android:onClick="startActivityThis"
+            android:background="@color/skin_item_color"
+            android:textColor="@color/skin_my_textColor"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/skin_item_color"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ghsy"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="光辉岁月"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/skin_my_textColor"
+            android:layout_toRightOf="@id/iv"
+            />
+
+        <!-- android:tint="@color/skin_icon_color"
+            android:tintMode="src_in" -->
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/playbar_btn_playlist"
+            android:layout_toLeftOf="@id/iv_play1"
+
+            />
+
+        <ImageView
+            android:id="@+id/iv_play1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/playbar_btn_play"
+            android:layout_toLeftOf="@id/iv_play2"
+            />
+
+        <ImageView
+            android:id="@+id/iv_play2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/playbar_btn_next"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

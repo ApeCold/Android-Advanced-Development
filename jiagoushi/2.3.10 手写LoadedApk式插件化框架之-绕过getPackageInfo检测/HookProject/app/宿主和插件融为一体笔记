@@ -1,0 +1,21 @@
+// 第一步：找到宿主 dexElements 得到此对象     PathClassLoader代表是宿主
+
+// 第二步：找到插件 dexElements 得到此对象，代表插件 DexClassLoader--代表插件
+
+// 第三步：创建出 新的 newDexElements []，类型必须是Element，必须是数组对象
+
+// 第四步：宿主dexElements + 插件dexElements =----> 融合  新的 newDexElements for遍历
+
+// 第五步：把新的 newDexElements，设置到宿主中去
+
+以上操作，就可以去加载插件里面的class
+
+
+
+需要去加载插件里面的 layout
+
+StringBlock ---》 string.xml  color.xml   anim.xml ...
+
+mStringBlocks[] ==  string.xml  color.xml   anim.xml
+
+只有mStringBlocks[] 初始化了，才能去加载 插件里面的资源

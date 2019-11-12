@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // 引入注解
+    implementation project(':Annotations')
+    // 加入谷歌注解处理器服务（坑）
+    // implementation 'com.google.auto.service:auto-service:1.0-rc2'
+
+    // As-3.4.1 + gradle5.1.1-all + auto-service:1.0-rc4
+    // As-3.5 + gradle5.4.1-all + auto-service:1.0-rc6
+    compileOnly'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc6'
+}
+
+// 中文乱码问题（错误: 编码GBK的不可映射字符）
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

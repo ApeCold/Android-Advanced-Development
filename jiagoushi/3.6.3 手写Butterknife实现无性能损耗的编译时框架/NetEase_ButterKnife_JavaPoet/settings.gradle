@@ -1,0 +1,2 @@
+include ':app', ':compiler', ':annotation', ':library'
+rootProject.name='NetEase_ButterKnife'

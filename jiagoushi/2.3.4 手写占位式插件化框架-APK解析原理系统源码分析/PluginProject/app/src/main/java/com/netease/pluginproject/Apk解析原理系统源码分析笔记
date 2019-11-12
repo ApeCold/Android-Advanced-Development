@@ -1,0 +1,58 @@
+1.静态注册的广播,是什么时候注册的？
+手机开机的时候, 所有的app，再次进行安装一遍, 系统会去解析AndroidManifest，解析静态广播后，就会自动注册
+
+2.我们去分析 安装
+data/app 放置目录
+data/data/包名/ 应用所属目录
+data/dalvik-cache  虚拟机去加载执行指令
+
+3.该分析那个目录
+data/app 放置目录
+
+手机开机安装app的时候，安装 过后 马上就会 全盘扫描，data/app 放置目录
+
+解析出 app apk 文件 里面所有组件，包括权限，系统会去解析AndroidManifest
+
+Android 会在 安装过后，会马上扫描此目录data/app 放置目录 ---> 解析 apk 文件 里面的配置信息AndroidManifest.xml ,如果里面有静态配置的广播
+就会要去注册广播
+
+分析系统源码，是如何进行解析apk
+
+PackageManagerService
+
+【目标】：看系统是如何 去解析 apk 文件里面的 组件信息的
+系统是在安装的时候，才会去扫描，apk
+
+PackageManagerService
+
+Linux内核驱动  --- init进程  -- zygote进程 孵化  SystemServer --- PackageManagerService启动
+
+PackageManagerService启动
+pms 如何去 处理 data/app/目录 ，如何解析apk
+
+dataDir /data/目录
+
+mAppInstallDir = new File(dataDir, "app"); /data/app/目录
+mAppInstallDir：如何去解析apk文件的
+
+scanDirTracedLI 是要去扫描 /data/app/目录下的apk文件  ---> 解析AndroidManifest 里面的所有信息
+
+扫描 apk 文件，解析apk  scanPackageLI --->
+
+parsePackage：解析 apk 文件里面的所有信息
+
+Package --->  apk 里面的 AndroidManifest配置信息 （所有的）
+
+拿到了Package，就能拿到 静态的广播信息
+
+最终的目标：
+<!-- 静态注册的广播 -->
+<receiver android:name=".StaticReceiver">
+
+   <intent-filter>
+
+                <action android:name="plugin.static_receiver" />
+
+            </intent-filter>
+
+        </receiver>

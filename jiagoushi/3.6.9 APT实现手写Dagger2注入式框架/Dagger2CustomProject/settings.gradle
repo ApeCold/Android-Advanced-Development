@@ -1,0 +1,2 @@
+include ':app', ':custom_dagger2', ':use_custom_dagger2'
+rootProject.name='Dagger2CustomProject'

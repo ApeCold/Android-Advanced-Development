@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF00FF</color>
+    <color name="colorPrimaryDark">#180101</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- 背景 -->
+    <color name="skin_my_background">@android:color/darker_gray</color>
+    <color name="skin_my_textColor">@android:color/white</color>
+    <color name="skin_item_color">#26E6E8E7</color>
+
+    <color name="skin_icon_color">@android:color/black</color>
+
+</resources>

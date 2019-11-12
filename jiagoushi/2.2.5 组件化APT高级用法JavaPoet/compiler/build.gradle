@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // AS3.4.1 + Gradle5.1.1 + auto-service:1.0-rc4
+    compileOnly'com.google.auto.service:auto-service:1.0-rc4'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc4'
+
+    // 帮助我们通过类调用的形式来生成Java代码
+    implementation "com.squareup:javapoet:1.9.0"
+
+    // 依赖注解
+    implementation project(':annotation')
+}
+
+// java控制台输出中文乱码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

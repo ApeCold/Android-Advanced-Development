@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/netease_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skin_item_color"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/music_icn_local" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_1"
+                android:text="本地音乐 (32)"
+                android:textColor="@color/skin_textColor"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/skin_textColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skin_item_color"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/music_icn_recent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_2"
+                android:text="最近播放(12)"
+                android:textColor="@color/skin_textColor"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/skin_textColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skin_item_color"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/music_icn_dld" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_3"
+                android:text="下载管理(10)"
+                android:textColor="@color/skin_textColor"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/skin_textColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/skin_item_color"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/music_icn_artist" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_4"
+                android:text="我是歌手(6)"
+                android:textColor="@color/skin_textColor"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll1"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/skin_item_color"
+            android:onClick="skinDynamic"
+            android:text="换肤"
+            android:textColor="@color/skin_textColor" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/skin_item_color"
+            android:onClick="skinDefault"
+            android:text="默认"
+            android:textColor="@color/skin_textColor" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/skin_item_color"
+            android:onClick="jumpSelf"
+            android:text="跳转"
+            android:textColor="@color/skin_textColor" />
+
+        <!-- 测试自定义控件换肤 -->
+        <com.netease.skin.dynamic.views.CustomCircleView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:circleColor="@color/skin_item_color" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/skin_item_color">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ghsy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv"
+            android:text="光辉岁月"
+            android:textColor="@color/skin_textColor"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_play1"
+            android:src="@drawable/playbar_btn_playlist" />
+
+        <ImageView
+            android:id="@+id/iv_play1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_play2"
+            android:src="@drawable/playbar_btn_play" />
+
+        <ImageView
+            android:id="@+id/iv_play2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/playbar_btn_next" />
+    </RelativeLayout>
+</RelativeLayout>

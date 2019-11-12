@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FD0103</color>
+    <color name="colorPrimaryDark">#FD0103</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- 换肤对应皮肤包颜色 -->
+    <color name="skin_background">#008577</color>
+    <color name="skin_textColor">#000000</color>
+    <color name="skin_item_color">#FFFFFF</color>
+</resources>

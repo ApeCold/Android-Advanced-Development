@@ -1,0 +1,81 @@
+占位式 插件化 ---》（stander标准） 在插件中必须使用 宿主的环境 appActivity   宿主context  ---》 插件
+
+Hook式 （宿主 和 插件 element 进行融合） 在插件中可以随意使用this，既然式融合一起，插件可以使用到宿主的环境
+插件越多 内存中的 newDexElements 就会越大
+
+LoadedApk式 插件化框架的手写，我们控制 ClassLoader
+PathClassLoader ---> 宿主的class
+自定义ClassLoader --》 插件的class
+解决这个问题：插件越多 内存中的 newDexElements 就会越大
+
+ActivityThread源码的分析：
+
+startActivity ---》 Activity --》Instrumentation ---> AMS检查 --》
+ActivityThread -- mH LAUNCH_ACTIVITY(自己处理LoaderApk中的ClassLoader)
+
+                case LAUNCH_ACTIVITY: {
+                    Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "activityStart");
+                    // 跳转的Activity纪录 --》
+                    final ActivityClientRecord r = (ActivityClientRecord) msg.obj;
+
+                    // 如果缓存mPackages中有LoadedApk 就直接返回，如果没有LoaaedApk就创建出LoadedApk ---》 宿主的LoadedApk.ClassLoader
+                    // 如果是加载插件，从mPackages取出 插件专用的LoadedApk.自定义ClassLoader
+                    r.packageInfo = getPackageInfoNoCheck(
+                            r.activityInfo.applicationInfo, r.compatInfo);
+
+                    // 真正的即将 实例化Activity 然后进行启动
+                    handleLaunchActivity(r, null, "LAUNCH_ACTIVITY");
+                    Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
+                } break;
+
+
+1.public final LoadedApk getPackageInfoNoCheck == 宿主的
+
+2.缓存中的 final ArrayMap<String, WeakReference<LoadedApk>> mPackages 默认保存的是宿主的LoadedApk
+
+
+LoadedApk   ---  宿主的   ----》 LoadedApk.ClassLoader ---> 宿主中的class
+java.lang.ClassLoader cl = r.packageInfo.getClassLoader(); // LoadedApk里面的ClassLoader
+(Activity)cl.loadClass(className).newInstance(); 实例化的Activity  --》 宿主的 LoadedApk里面的ClassLoader 去实例化的
+
+
+以上代码结论：宿主的LoadedApk.ClassLoader 去加载 宿主中的class，然后实例化的
+
+
+--- > 自定义一个LoadedApk 自定义一个ClassLoader 用于专门加载插件里面的class，然后实例化
+
+
+自定义一个 LoadedApk 然后保存 --》 mPackages
+
+LoadedApk   ---  插件的   ----》 LoadedApk.ClassLoader ---> 插件中的class
+
+3.梳理流程：
+  宿主：   startActivity ---》 Activity --》Instrumentation ---> AMS检查 --》ActivityThread
+           mPackages.value取出 LoadedApk.ClassLoader ---> 实例化Activity  （只能加载宿主的）
+
+  插件（下一节课，要完成的功能）:
+           我们在取出之前，需要自定义一个 （插件专用的 LoadedApk 自定义ClassLoader） 添加到  --》 mPackages
+
+           startActivity ---》 Activity --》Instrumentation ---> AMS检查 --》ActivityThread
+           mPackages.value取出 插件专用的LoadedApk.ClassLoader --> 实例化插件的Activity
+
+
+  下节课的目标：绕过 PMS 的检查处理 -->
+
+ 流程：startActivity ---》 Activity --》Instrumentation ---> AMS检查 --》ActivityThread --》
+
+--> 获取自定义的LoadedApk.ClassLoader --> 实例化  initializeJavaContextClassLoader（PMS检查要启动的包名是否安装）
+
+ -->生命周期方法的处理 (才能真正启动加载到 插件包里面的Activity)
+
+PMS检测 插件包包名是否安装，如果没有安装就 会抛出异常：
+java.lang.RuntimeException: Unable to instantiate application android.app.Application: java.lang.IllegalStateException:
+Unable to get package info for com.netease.plugin_package; is package not installed?
+
+pi = pm.getPackageInfo(mPackageName, PackageManager.MATCH_DEBUG_TRIAGED_MISSING,
+                    UserHandle.myUserId());
+Hook 我们要在 getPackageInfo 执行之前 给Hook拦截住，控制pi不为null
+分析：pm.getPackageInfo   客户端进程 ----》 PMS进程-检测是否安装了
+
+
+

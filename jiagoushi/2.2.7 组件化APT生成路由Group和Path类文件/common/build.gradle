@@ -1,0 +1,39 @@
+// 公共基础库无须作为组件化模块
+apply plugin: 'com.android.library'
+
+def rootAndroidId = rootProject.ext.androidId
+def support = rootProject.ext.dependencies
+
+android {
+    compileSdkVersion rootAndroidId.compileSdkVersion
+    buildToolsVersion rootAndroidId.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootAndroidId.minSdkVersion
+        targetSdkVersion rootAndroidId.targetSdkVersion
+        versionCode rootAndroidId.versionCode
+        versionName rootAndroidId.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation support.appcompat
+
+    // 每个功能子模块既然都要生成APT源文件，而且又是所有模块依赖的公共库
+    // 那么公共基础库依赖路由arouter_api就能向每个子模块提供开放api了
+    api project(':arouter_api') // 路由对外开放api模块
+}

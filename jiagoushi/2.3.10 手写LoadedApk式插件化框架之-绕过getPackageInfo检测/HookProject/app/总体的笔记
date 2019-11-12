@@ -1,0 +1,15 @@
+1.占位插件化 Activity  - ProxyActivity   --》插件里面，在插件开发中，必须时时刻刻记住是 是使用宿主的环境
+2.占位插件化 Service   - ProxyService    --》插件里面，在插件开发中，必须时时刻刻记住是 是使用宿主的环境
+3.占位插件化 动态广播   - ProxyReceiver   --》插件里面，在插件开发中，必须时时刻刻记住是 是使用宿主的环境
+4.占位插件化 静态广播 -- 分析系统是如何解析APK文件的，源码的阅读，阅读源码的思路，PMS入手-（模仿系统是如何解析，我们就怎么解析）（难点）
+稳定，插件化开发很痛苦   -------》 开源中的框架 插件化框架 DL
+
+5.Hook从入门 到 熟练 --（1.替换，2.被替换的 动态代理/接口设置）  --> Hook系统源码 -- （Hook1）AMS检测是否注册 --- （Hook2）换回来
+6.安卓的类加载 --》PathClassLoader(加载运行App中的class)，DexClassLoader(apk zip), DexPathList Element，插件Element和宿主Element
+7.真正的融合--》就可以加载插件里面的class， 插件里面的Layout怎么去加载呢，AseetManager Resources  （难点）
+Hook式插件化框架 --》 融为一体，Hook方式： 不用考虑宿主的环境，不稳定==兼容性，  360开源框架 Hook方式实现的
+
+8.LoadedApk插件化-- ActivityThread LAUNCH_ACTIVITY源码切入点，ClassLoader--》宿主 --> LoadedApk.ClassLoader --> 宿主class
+9.自定义LoadedApk.自定义ClassLoader ---> 插件的class， mPackages -- size=2  ， 没法绕过PMS检测，检测插件包名是否安装了
+10.开关 切换 宿主 插件，    再次运行会报错，是因为 PMS检测， Hook PMS，绕过了pi==null的情况
+不稳定==兼容性

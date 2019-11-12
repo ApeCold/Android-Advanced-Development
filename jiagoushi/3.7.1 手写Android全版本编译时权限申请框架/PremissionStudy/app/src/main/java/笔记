@@ -1,0 +1,9 @@
+AspectJ
+    javac    Test.java  Test.class（我们看不懂的字节码 虚拟机才看懂的）
+
+    javac+AspectJ  Test.java  Test.class
+
+依赖倒置原则（面向抽象，不面向细节）
+    华为
+    小米
+    ...

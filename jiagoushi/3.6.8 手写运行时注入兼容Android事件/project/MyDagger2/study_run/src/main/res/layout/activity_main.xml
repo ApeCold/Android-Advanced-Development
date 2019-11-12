@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <Button
+        android:id="@+id/bt_test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试1"
+        />
+
+
+    <Button
+        android:id="@+id/bt_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试2"
+        />
+
+    <Button
+        android:id="@+id/bt_test3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试3"
+        />
+
+    <Button
+        android:id="@+id/bt_test4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试4"
+        />
+
+
+
+    <Button
+        android:id="@+id/bt_t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="兼容测试一"
+        />
+
+    <Button
+        android:id="@+id/bt_t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="兼容测试二"
+        />
+
+   <!-- <Button
+        android:id="@+id/bt_t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="兼容测试二"
+        />-->
+
+
+</LinearLayout>

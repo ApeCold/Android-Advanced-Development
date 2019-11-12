@@ -1,0 +1,3 @@
+com/netease/hotfix/demo/MainActivity.class
+com/netease/hotfix/demo/BaseActivity.class
+com/netease/hotfix/demo/BaseApplication.class

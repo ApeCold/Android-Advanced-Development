@@ -1,0 +1,10 @@
+Dagger源码分析：
+
+Student ---> Activity {@Inject Studnet s;}
+
+Dagger 解耦
+
+好处一：隔离，相对于对Student对象进行了封装包裹管理，发生变换的只有一处地方；
+好处二：之前模式（目标要去管理Student 产生关系） Dagger（目标 和 对象 都需要交给Dagger来管理）
+
+MVP  P --- View层  --> Dagger
