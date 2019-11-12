@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\Administrator\Desktop\OpenGL_1\app\.cxx\cmake\debug\x86'
+ninja: no work to do.

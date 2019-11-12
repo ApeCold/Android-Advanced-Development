@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.netease.opengl_1.MainActivity">
+
+    <com.netease.opengl_1.MyGLSurfaceView
+        android:id="@+id/my_gl_sruface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/group_record_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_above="@+id/btn_record"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/group_record_speed_background"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbtn_record_speed_extra_slow"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rbtn_record_speed_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="极慢"
+            android:textColor="@drawable/rbtn_record_speed_text"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_record_speed_slow"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rbtn_record_speed_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="慢"
+            android:textColor="@drawable/rbtn_record_speed_text"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_record_speed_normal"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rbtn_record_speed_background"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="标准"
+            android:textColor="@drawable/rbtn_record_speed_text"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_record_speed_fast"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rbtn_record_speed_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="快"
+            android:textColor="@drawable/rbtn_record_speed_text"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_record_speed_extra_fast"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rbtn_record_speed_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="极快"
+            android:textColor="@drawable/rbtn_record_speed_text"/>
+    </RadioGroup>
+
+    <com.netease.opengl_1.MyRecordButton
+        android:id="@+id/btn_record"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_record_background"
+        android:gravity="center"
+        android:text="按住拍" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <CheckBox
+            android:id="@+id/chk_bigeye"
+            android:layout_width="wrap_content"
+            android:text="大眼"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/chk_stick"
+            android:layout_width="wrap_content"
+            android:text="贴纸"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/chk_beauty"
+            android:layout_width="wrap_content"
+            android:text="美颜"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

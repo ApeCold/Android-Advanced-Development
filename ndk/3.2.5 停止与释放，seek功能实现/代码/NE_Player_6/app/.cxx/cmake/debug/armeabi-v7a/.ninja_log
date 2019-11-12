@@ -1,0 +1,21 @@
+# ninja log v5
+2	208	588507144	CMakeFiles/native-lib.dir/JavaCallHelper.cpp.o	e966668213e51373
+3	586	588507144	CMakeFiles/native-lib.dir/native-lib.cpp.o	b53acaf3b626def8
+1	598	588507144	CMakeFiles/native-lib.dir/NEFFmpeg.cpp.o	9b386f8d284dbbf5
+3	651	588507144	CMakeFiles/native-lib.dir/VideoChannel.cpp.o	c7a68968ce8cb0b2
+0	654	588507144	CMakeFiles/native-lib.dir/AudioChannel.cpp.o	2192979a7641f0a1
+654	5650	588507149	C:/Users/Administrator/Desktop/NE_Player_6/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	56c01959be5b5770
+4	700	588527868	CMakeFiles/native-lib.dir/native-lib.cpp.o	b53acaf3b626def8
+4	706	588527868	CMakeFiles/native-lib.dir/NEFFmpeg.cpp.o	9b386f8d284dbbf5
+3	775	588527868	CMakeFiles/native-lib.dir/AudioChannel.cpp.o	2192979a7641f0a1
+5	828	588527868	CMakeFiles/native-lib.dir/VideoChannel.cpp.o	c7a68968ce8cb0b2
+829	2125	588527870	C:/Users/Administrator/Desktop/NE_Player_6/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	56c01959be5b5770
+4	347	588530957	CMakeFiles/native-lib.dir/JavaCallHelper.cpp.o	e966668213e51373
+6	798	588530958	CMakeFiles/native-lib.dir/native-lib.cpp.o	b53acaf3b626def8
+4	818	588530958	CMakeFiles/native-lib.dir/NEFFmpeg.cpp.o	9b386f8d284dbbf5
+5	855	588530958	CMakeFiles/native-lib.dir/VideoChannel.cpp.o	c7a68968ce8cb0b2
+3	1003	588530958	CMakeFiles/native-lib.dir/AudioChannel.cpp.o	2192979a7641f0a1
+1003	2496	588530959	C:/Users/Administrator/Desktop/NE_Player_6/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	56c01959be5b5770
+3	537	588533276	CMakeFiles/native-lib.dir/native-lib.cpp.o	b53acaf3b626def8
+2	583	588533276	CMakeFiles/native-lib.dir/NEFFmpeg.cpp.o	9b386f8d284dbbf5
+583	1768	588533277	C:/Users/Administrator/Desktop/NE_Player_6/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	56c01959be5b5770

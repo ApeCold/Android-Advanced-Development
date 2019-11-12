@@ -1,0 +1,31 @@
+[
+{
+  "directory": "C:/Users/Administrator/Desktop/NE_Player_6/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "D:\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi16 --gcc-toolchain=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -IC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -LC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/libs/armeabi-v7a -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\native-lib.dir\\AudioChannel.cpp.o -c C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\AudioChannel.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\AudioChannel.cpp"
+},
+
+{
+  "directory": "C:/Users/Administrator/Desktop/NE_Player_6/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "D:\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi16 --gcc-toolchain=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -IC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -LC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/libs/armeabi-v7a -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\native-lib.dir\\JavaCallHelper.cpp.o -c C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\JavaCallHelper.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\JavaCallHelper.cpp"
+},
+
+{
+  "directory": "C:/Users/Administrator/Desktop/NE_Player_6/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "D:\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi16 --gcc-toolchain=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -IC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -LC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/libs/armeabi-v7a -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\native-lib.dir\\NEFFmpeg.cpp.o -c C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\NEFFmpeg.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\NEFFmpeg.cpp"
+},
+
+{
+  "directory": "C:/Users/Administrator/Desktop/NE_Player_6/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "D:\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi16 --gcc-toolchain=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -IC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -LC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/libs/armeabi-v7a -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\native-lib.dir\\VideoChannel.cpp.o -c C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\VideoChannel.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\VideoChannel.cpp"
+},
+
+{
+  "directory": "C:/Users/Administrator/Desktop/NE_Player_6/app/.cxx/cmake/release/armeabi-v7a",
+  "command": "D:\\Android\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi16 --gcc-toolchain=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS -IC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -LC:/Users/Administrator/Desktop/NE_Player_6/app/src/main/cpp/libs/armeabi-v7a -Oz -DNDEBUG  -fPIC   -o CMakeFiles\\native-lib.dir\\native-lib.cpp.o -c C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\native-lib.cpp",
+  "file": "C:\\Users\\Administrator\\Desktop\\NE_Player_6\\app\\src\\main\\cpp\\native-lib.cpp"
+}
+]

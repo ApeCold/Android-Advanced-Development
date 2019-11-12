@@ -1,0 +1,7 @@
+听直播之前，大家看一下以下资料进行预习：
+
+高反差保留算法： https://www.jianshu.com/p/bb702124d2ad
+
+图层混合强光模式：https://blog.csdn.net/matrix_space/article/details/22426633
+
+开源美颜相机工程参考：https://github.com/wuhaoyu1990/MagicCamera

@@ -1,0 +1,20 @@
+Executable : D:\Android\sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HC:\Users\Administrator\Desktop\OpenGL_1\app\src\main\cpp
+-BC:\Users\Administrator\Desktop\OpenGL_1\app\.cxx\cmake\release\x86
+-DANDROID_ABI=x86
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Administrator\Desktop\OpenGL_1\app\build\intermediates\cmake\release\obj\x86
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=D:\Android\sdk\ndk\19.2.5345600
+-DCMAKE_CXX_FLAGS=
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_ANDROID_ARCH_ABI=x86
+-DCMAKE_SYSTEM_VERSION=21
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_ANDROID_NDK=D:\Android\sdk\ndk\19.2.5345600
+-DCMAKE_TOOLCHAIN_FILE=D:\Android\sdk\ndk\19.2.5345600\build\cmake\android.toolchain.cmake
+-G Ninja
+-DCMAKE_MAKE_PROGRAM=D:\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+jvmArgs : 
+

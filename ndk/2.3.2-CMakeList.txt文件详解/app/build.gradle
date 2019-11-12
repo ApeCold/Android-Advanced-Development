@@ -12,11 +12,11 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags ""
-                abiFilters "x86"
+                abiFilters "x86"//指定本地库的cpu架构
             }
         }
         ndk {
-            abiFilters "x86"
+            abiFilters "x86"//指定第三方库的cpu架构
         }
     }
     buildTypes {

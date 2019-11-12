@@ -3,7 +3,6 @@
 #include <android/log.h>
 #include <fmod.hpp>
 
-
 using namespace FMOD;
 
 extern "C" JNIEXPORT jstring JNICALL
